@@ -1,0 +1,22 @@
+name: main.StructurePlugin
+main: main.StructurePlugin
+version: 1.5
+api-version: 1.19
+commands:
+  structure:
+    usage: /<command> <save/place>
+    description: Saves a specified terain as a structure which can be placed on other worlds
+    save:
+      usage: /<command> save <x1> <y1> <z1> <x2> <y2> <z2> <name>
+      permission: structure.save
+    place:
+      usage: /<command> place <x1> <y1> <z1> <rotation> <name>
+      permission: structure.place
+permissions:
+  structure.*:
+    default: op
+    children:
+      structure.place:
+        default: op
+      structure.save:
+        default: op
